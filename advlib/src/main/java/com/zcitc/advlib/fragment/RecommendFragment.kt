@@ -1,4 +1,4 @@
-package com.zcitc.advertisement.fragment
+package com.zcitc.advlib.fragment
 
 import android.os.Bundle
 import android.os.Message
