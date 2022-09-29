@@ -21,12 +21,14 @@ import com.zcitc.advlib.KeySet.Companion.FIRST_PAGE_SEARCH_ADS
 import com.zcitc.advlib.KeySet.Companion.FIRST_PAGE_START_ADS
 import com.zcitc.advlib.KeySet.Companion.FIRST_PAGE_TOP_CAROUSEL_ADS
 import com.zcitc.advlib.KeySet.Companion.RECOMMENDED_AD_COLLECTION
+import com.zcitc.advlib.activity.WebPageActivity
 import com.zcitc.advlib.bean.ADPlanItemsData
 import com.zcitc.advlib.utils.LocalDataUtils
 import com.zcitc.advlib.utils.RefreshTokenUtils
 import com.zcitc.advlib.utils.isNullOrEmptyStr
 import com.zcitc.glidelibrary.GlideUtils
 import com.zcitc.utilslibrary.FastClickUtils
+import com.zcitc.utilslibrary.utils.LiveDataBus
 import okhttp3.OkHttpClient
 
 class AdvViewUtil {
@@ -88,16 +90,8 @@ class AdvViewUtil {
         activity: FragmentActivity,
         onAdvClickLisener: AdvClickLisener?
     ) {
-        RefreshTokenUtils.requestToken(activity) {
-            var configsVersion = LocalDataUtils().getValue(activity, KeySet.CONFIGS_VERSION)
-            getAdAllData(activity, configsVersion, {
-                   showAdPopDialog(activity,onAdvClickLisener)
-            }, {
-                    showAdPopDialog(activity,onAdvClickLisener)
-            }, {
-                    showAdPopDialog(activity,onAdvClickLisener)
-            })
-        }
+        getAdvDataAddShow(activity,null,FIRST_PAGE_POP_ADS,onAdvClickLisener)
+
     }
     private fun setAddAdvView(
         activity: FragmentActivity, advView: ViewGroup?,
@@ -107,7 +101,7 @@ class AdvViewUtil {
         if(onAdvClickLisener==null){
             onClickLisener =  object:AdvClickLisener{
                 override fun onClick(url: String?, title: String?) {
-//                    activity?.let { it.startActivity(Intent(it,WebPageActivity::class.java).putExtra("weburl",url)) }
+                    activity?.let { it.startActivity(Intent(it, WebPageActivity::class.java).putExtra("weburl",url)) }
                 }
 
                 override fun onClick(url: String?, title: String?, hint: String?) {
@@ -136,26 +130,26 @@ class AdvViewUtil {
             }
 
         } else if (tagData.equals(FIRST_PAGE_START_ADS)) {
-//            advView?.let {
-//                var elementPlanItems: MutableList<ADPlanItemsData> = ArrayList()
-//                elementPlanItems.addAll(getAdvList(activity, FIRST_PAGE_START_ADS))
-//                if (!elementPlanItems.isNullOrEmpty()) {
-//                    it.visibility = View.VISIBLE
-//
-//                    it.showStartAdData(activity,  elementPlanItems, onCountDownFinishListener,onClickLisener)
-//                } else {
-//                    it.visibility = View.GONE
-//                    onCountDownFinishListener?.onCountDownFinish()
-//                }
-//            }
+            advView?.let {
+                var elementPlanItems: MutableList<ADPlanItemsData> = ArrayList()
+                elementPlanItems.addAll(getAdvList(activity, FIRST_PAGE_START_ADS))
+                if (!elementPlanItems.isNullOrEmpty()) {
+                    it.visibility = View.VISIBLE
+
+                    AdvView().showStartAdData(activity, it, elementPlanItems, onCountDownFinishListener,onClickLisener)
+                } else {
+                    it.visibility = View.GONE
+                    onCountDownFinishListener?.onCountDownFinish()
+                }
+            }
 
 
         } else if (tagData.equals(FIRST_PAGE_POP_ADS)) {
-//            var elementPlanItems: MutableList<ADPlanItemsData> = ArrayList()
-//            elementPlanItems.addAll(getAdvList(activity, FIRST_PAGE_POP_ADS))
-//            if (!elementPlanItems.isNullOrEmpty()) {
-//                showAdPopDialog(activity, elementPlanItems,onClickLisener)
-//            }
+            var elementPlanItems: MutableList<ADPlanItemsData> = ArrayList()
+            elementPlanItems.addAll(getAdvList(activity, FIRST_PAGE_POP_ADS))
+            if (!elementPlanItems.isNullOrEmpty()) {
+                showAdPopDialog(activity, elementPlanItems,onClickLisener)
+            }
 
         } else {
             advView?.let { addAdvView(activity, it, tagData,onClickLisener) }
@@ -297,5 +291,8 @@ class AdvViewUtil {
         LocalDataUtils().setValue(activity, KeySet.CONFIGS_VERSION, "1")
         AdvStatisticsUtils().delDisplayRecordData(activity)
         AdvStatisticsUtils().delDisplayAdvCache(activity)
+    }
+    fun ADV_FINISH(){
+        LiveDataBus.get().with("COUNTDOWN_ADV_FINISH").postValue("")
     }
 }

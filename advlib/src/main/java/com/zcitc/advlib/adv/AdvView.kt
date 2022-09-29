@@ -30,18 +30,18 @@ class AdvView {
      * 启动页广告
      *gotoUrl:外部打app要跳转的链接
      */
-//    fun showStartAdData(
-//        activity: Activity,
-//        rootbinding: ViewGroup,
-//        startAdData: MutableList<ADPlanItemsData>,
-//        onCountDownFinishListener: CountDownAdView.OnCountDownFinishListener?,
-//        onAdvClickLisener: AdvClickLisener?
-//    ) {
-//        rootbinding.removeAllViews()
-//        var countDownAdView: CountDownAdView = CountDownAdView(activity)
-//        countDownAdView.showCountDownAdData(activity, startAdData,onCountDownFinishListener,onAdvClickLisener)
-//        rootbinding.addView(countDownAdView)
-//    }
+    fun showStartAdData(
+        activity: Activity,
+        rootbinding: ViewGroup,
+        startAdData: MutableList<ADPlanItemsData>,
+        onCountDownFinishListener: OnCountDownFinishListener?,
+        onAdvClickLisener: AdvClickLisener?
+    ) {
+        rootbinding.removeAllViews()
+        var countDownAdView = CountDownAdView(activity)
+        countDownAdView.showCountDownAdData(activity, startAdData,onCountDownFinishListener,onAdvClickLisener)
+        rootbinding.addView(countDownAdView)
+    }
 
 
     /**
@@ -88,8 +88,6 @@ class AdvView {
                             )
                         )
                         onAdvClickLisener?.onClick(ApiRoutes.HOUSESEARCH, "搜索", hotSearchesKeyList[it])
-//                        AppManager.getAppManager()
-//                            .startWeb(ApiRoutes.HOUSESEARCH, false, "搜索", hotSearchesKeyList[it])
                     } catch (e: Exception) {
                     }
 
@@ -289,33 +287,6 @@ class AdvView {
         view.layoutParams = lp
     }
 
-//    class GlideImageLoader : ImageLoader() {
-//        override fun displayImage(context: Context?, path: Any?, imageView: ImageView) {
-//            try {
-//                if (path is String) {
-//                    GlideUtils.showImage(
-//                        context,
-//                        path as String?,
-//                        imageView,
-//                        com.zcitc.glidelibrary.R.mipmap.home_image_placeholder3
-//                    )
-//                    imageView.scaleType = ImageView.ScaleType.FIT_XY
-//                }
-//                if (path is Int) {
-//                    GlideUtils.showImage(
-//                        context,
-//                        com.zcitc.glidelibrary.R.mipmap.banner,
-//                        imageView,
-//                        com.zcitc.glidelibrary.R.mipmap.home_image_placeholder3
-//                    )
-//                    imageView.scaleType = ImageView.ScaleType.FIT_XY
-//
-//                }
-//            } catch (e: java.lang.Exception) {
-//                e.printStackTrace()
-//            }
-//        }
-//    }
 
 
 }

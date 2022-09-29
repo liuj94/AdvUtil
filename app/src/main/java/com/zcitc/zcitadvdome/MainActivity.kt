@@ -1,6 +1,7 @@
 package com.zcitc.zcitadvdome
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         AdvViewUtil().getAdvDataAddShow(this, layout5, KeySet.FIRST_PAGE_TOP_CAROUSEL_ADS, object : AdvClickLisener {
             override fun onClick(url: String?, title: String?) {
                 Log.d("MainActivity", "url=" + url)
+                startActivity(Intent(this@MainActivity,WebPageActivity::class.java).putExtra("url",url))
             }
 
             override fun onClick(url: String?, title: String?, hint: String?) {
@@ -107,9 +109,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun nextClick(view: View) {
-        AdvViewUtil().getAdvDataAddShow(this, layout1, KeySet.FIRST_PAGE_BLACK_ADS, object : AdvClickLisener {
+        AdvViewUtil().getPOPAdvShow(this,object : AdvClickLisener {
             override fun onClick(url: String?, title: String?) {
-
+                Log.d("MainActivity", "url=" + url)
             }
 
             override fun onClick(url: String?, title: String?, hint: String?) {
