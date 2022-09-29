@@ -21,10 +21,9 @@ import com.zcitc.advertisement.adv.ADItemGroupsUtils.FIRST_PAGE_SEARCH_ADS
 import com.zcitc.advertisement.adv.ADItemGroupsUtils.FIRST_PAGE_START_ADS
 import com.zcitc.advertisement.adv.ADItemGroupsUtils.FIRST_PAGE_TOP_CAROUSEL_ADS
 import com.zcitc.advertisement.adv.ADItemGroupsUtils.RECOMMENDED_AD_COLLECTION
-import com.zcitc.advertisement.bean.ADItemGroupsData
 
 import com.zcitc.advertisement.bean.ADPlanItemsData
-import com.zcitc.advertisement.helper.RefreshTokenUtils
+import com.zcitc.advertisement.utils.RefreshTokenUtils
 
 import com.zcitc.advertisement.utils.LocalDataUtils
 import com.zcitc.advertisement.utils.isNullOrEmptyStr
@@ -32,8 +31,6 @@ import com.zcitc.glidelibrary.GlideUtils
 
 import com.zcitc.utilslibrary.FastClickUtils
 import okhttp3.OkHttpClient
-import java.io.File
-import java.util.*
 import kotlin.collections.ArrayList
 
 class AdvViewUtil {

@@ -6,8 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity">
 
-<!--    <com.zcitc.advertisement.adv.AdvView-->
+<!--    <com.zcitc.advlib.adv.AdvView-->
 <!--        android:id="@+id/splashAdv"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="match_parent" />-->
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

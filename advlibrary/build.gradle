@@ -16,18 +16,7 @@ android {
         consumerProguardFiles "consumer-rules.pro"
     }
 
-    buildTypes {
-        release {
-//            buildConfigField "String", "ADDRESS", rootProject.ext.android["versionAddress"]
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-        debug {
-//            buildConfigField "String", "ADDRESS", rootProject.ext.android["versionAddress"]
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
+
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -48,8 +37,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-    api 'androidx.recyclerview:recyclerview:1.2.1'
-    api 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
 
     //youth banner
     api 'com.youth.banner:banner:1.4.10'
@@ -64,7 +53,7 @@ dependencies {
     api 'com.github.liuj94:httplibrary:v2.0.0'
     api 'com.github.liuj94:utilslib:v2.0.0'
     api 'com.github.liuj94:glidelib:v2.0.0'
-    api 'com.github.liuj94:baselibrary:v4.0.0'
+    api 'com.github.liuj94:baselibrary:v5.0.0'
 
 
 

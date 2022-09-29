@@ -1,6 +1,5 @@
 package com.zcitc.advertisement.activity
 
-import android.content.Intent.getIntent
 import android.os.Bundle
 import com.zcitc.advertisement.R
 import com.zcitc.advertisement.databinding.ActivityWebBinding
