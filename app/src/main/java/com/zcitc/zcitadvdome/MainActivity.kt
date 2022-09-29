@@ -3,25 +3,51 @@ package com.zcitc.zcitadvdome
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.RelativeLayout
 import com.zcitc.advlib.KeySet
 import com.zcitc.advlib.adv.AdvClickLisener
 import com.zcitc.advlib.adv.AdvViewUtil
+
 lateinit var layout1: RelativeLayout
 lateinit var layout2: RelativeLayout
 lateinit var layout3: RelativeLayout
+lateinit var layout4: RelativeLayout
+lateinit var layout5: RelativeLayout
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-         layout1 = findViewById(R.id.layout1)
-         layout2 = findViewById(R.id.layout2)
-         layout3 = findViewById(R.id.layout3)
+        layout1 = findViewById(R.id.layout1)
+        layout2 = findViewById(R.id.layout2)
+        layout3 = findViewById(R.id.layout3)
+        layout4 = findViewById(R.id.layout4)
+        layout5 = findViewById(R.id.layout5)
 
-        AdvViewUtil().getAdvDataAddShow(this,layout3, KeySet.FIRST_PAGE_CONSULTANT_ADS,object : AdvClickLisener{
+        AdvViewUtil().getAdvDataAddShow(this, layout5, KeySet.FIRST_PAGE_TOP_CAROUSEL_ADS, object : AdvClickLisener {
+            override fun onClick(url: String?, title: String?) {
+                Log.d("MainActivity", "url=" + url)
+            }
+
+            override fun onClick(url: String?, title: String?, hint: String?) {
+
+            }
+
+        })
+        AdvViewUtil().getAdvDataAddShow(this, layout4, KeySet.FIRST_PAGE_BANNER_ADS, object : AdvClickLisener {
+            override fun onClick(url: String?, title: String?) {
+                Log.d("MainActivity", "url=" + url)
+            }
+
+            override fun onClick(url: String?, title: String?, hint: String?) {
+
+            }
+
+        })
+        AdvViewUtil().getAdvDataAddShow(this, layout3, KeySet.FIRST_PAGE_CONSULTANT_ADS, object : AdvClickLisener {
             override fun onClick(url: String?, title: String?) {
 
             }
@@ -32,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-        AdvViewUtil().getAdvDataAddShow(this,layout2, KeySet.FIRST_PAGE_SEARCH_ADS,object : AdvClickLisener{
+        AdvViewUtil().getAdvDataAddShow(this, layout2, KeySet.FIRST_PAGE_SEARCH_ADS, object : AdvClickLisener {
             override fun onClick(url: String?, title: String?) {
 
             }
@@ -43,7 +69,7 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-        AdvViewUtil().getAdvDataAddShow(this,layout1, KeySet.FIRST_PAGE_BLACK_ADS,object : AdvClickLisener{
+        AdvViewUtil().getAdvDataAddShow(this, layout1, KeySet.FIRST_PAGE_BLACK_ADS, object : AdvClickLisener {
             override fun onClick(url: String?, title: String?) {
 
             }
@@ -81,7 +107,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun nextClick(view: View) {
-        AdvViewUtil().getAdvDataAddShow(this,layout1, KeySet.FIRST_PAGE_BLACK_ADS,object : AdvClickLisener{
+        AdvViewUtil().getAdvDataAddShow(this, layout1, KeySet.FIRST_PAGE_BLACK_ADS, object : AdvClickLisener {
             override fun onClick(url: String?, title: String?) {
 
             }

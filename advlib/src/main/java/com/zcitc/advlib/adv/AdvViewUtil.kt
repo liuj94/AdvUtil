@@ -244,8 +244,8 @@ class AdvViewUtil {
         if (isRefreshADdata) {
             when (tagStyle) {
                 FIRST_PAGE_SEARCH_ADS -> AdvView().showSearchKeyData(activity,advView, elementPlanItems,onAdvClickLisener)
-//                FIRST_PAGE_BANNER_ADS -> advView.showCentralBannerAdvData(activity, elementPlanItems,onAdvClickLisener)
-//                FIRST_PAGE_TOP_CAROUSEL_ADS -> advView.showTopBannerAdvData(activity, elementPlanItems,onAdvClickLisener)
+                FIRST_PAGE_BANNER_ADS -> AdvView().showCentralBannerAdvData(activity,advView, elementPlanItems,onAdvClickLisener)
+                FIRST_PAGE_TOP_CAROUSEL_ADS -> AdvView().showTopBannerAdvData(activity,advView, elementPlanItems,onAdvClickLisener)
                 FIRST_PAGE_BLACK_ADS -> AdvView().showHotInformationAdvData(activity,advView, elementPlanItems,onAdvClickLisener)
 
             }
@@ -279,8 +279,8 @@ class AdvViewUtil {
         if (isRefreshADdata) {
             when (tagData) {
                 FIRST_PAGE_SEARCH_ADS -> AdvView().showSearchKeyData(activity, advView,elementPlanItems,onAdvClickLisener)
-//                FIRST_PAGE_BANNER_ADS -> advView.showCentralBannerAdvData(activity, elementPlanItems,onAdvClickLisener)
-//                FIRST_PAGE_TOP_CAROUSEL_ADS -> advView.showTopBannerAdvData(activity, elementPlanItems,onAdvClickLisener)
+                FIRST_PAGE_BANNER_ADS -> AdvView().showCentralBannerAdvData(activity,advView, elementPlanItems,onAdvClickLisener)
+                FIRST_PAGE_TOP_CAROUSEL_ADS -> AdvView().showTopBannerAdvData(activity, advView,elementPlanItems,onAdvClickLisener)
                 FIRST_PAGE_BLACK_ADS -> AdvView().showHotInformationAdvData(activity,advView, elementPlanItems,onAdvClickLisener)
 
             }

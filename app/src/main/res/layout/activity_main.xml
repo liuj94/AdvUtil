@@ -12,6 +12,16 @@
     android:layout_width="match_parent"
     android:layout_height="50dp"/>
     <RelativeLayout
+        android:id="@+id/layout5"
+        android:layout_margin="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:id="@+id/layout4"
+        android:layout_margin="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <RelativeLayout
         android:id="@+id/layout1"
         android:layout_margin="15dp"
         android:layout_width="wrap_content"
@@ -26,15 +36,7 @@
         android:layout_margin="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <RelativeLayout
-        android:id="@+id/layout4"
-        android:layout_margin="15dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <RelativeLayout
-        android:id="@+id/layout5"
-        android:layout_margin="15dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
+
 
 </LinearLayout>
