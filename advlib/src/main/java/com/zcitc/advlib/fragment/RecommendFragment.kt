@@ -14,7 +14,6 @@ import com.zcitc.advlib.adapter.RecommendAdapter
 import com.zcitc.advlib.adv.AdvStatisticsUtils
 import com.zcitc.advlib.adv.getAdvList
 import com.zcitc.advlib.bean.ADPlanItemsData
-import com.zcitc.advlib.fragment.BaseFragment
 import com.zcitc.utilslibrary.utils.LiveDataBus
 
 import java.util.*

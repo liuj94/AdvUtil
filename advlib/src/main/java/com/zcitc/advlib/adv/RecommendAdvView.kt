@@ -11,12 +11,12 @@ import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.zcitc.advertisement.fragment.RecommendFragment
 import com.zcitc.advlib.R
 import com.zcitc.advlib.adapter.FragmentStatePagerItemAdapter
 import com.zcitc.advlib.adapter.MyCommonNavigatorAdapter
 import com.zcitc.advlib.bean.ADPlanItemsData
 import com.zcitc.advlib.bean.AdvertisementRecommendationData
+import com.zcitc.advlib.fragment.RecommendFragment
 import com.zcitc.advlib.widget.MyViewPager
 import com.zcitc.utilslibrary.utils.LiveDataBus
 import net.lucode.hackware.magicindicator.MagicIndicator
